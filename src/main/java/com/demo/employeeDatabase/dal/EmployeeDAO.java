@@ -14,7 +14,7 @@ import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "employee")
-@Builder(toBuilder = true)
+@SuperBuilder(toBuilder = true)
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
