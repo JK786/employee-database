@@ -16,6 +16,8 @@ class RestCustomExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(Exception.class)
     protected ResponseEntity<Object> intercept(Exception ex) {
 
+        log.info("Intercepting exception: " + ex.getMessage());
+
         if (ex instanceof IllegalArgumentException) {
             log.warn(ex, ex);
             return ResponseEntity.status(400).body(ex.getMessage());

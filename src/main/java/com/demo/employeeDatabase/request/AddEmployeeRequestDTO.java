@@ -19,5 +19,5 @@ public class AddEmployeeRequestDTO {
     //This will be considered as creation time of the employee
     private String requestGenerationTime;
 
-    private  EmployeeDetailsInputDTO employeeDetailsInputDTO;
+    private  EmployeeDetailsInputDTO employeeDetails;
 }

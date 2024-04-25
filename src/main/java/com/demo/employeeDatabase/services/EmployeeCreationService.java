@@ -26,6 +26,7 @@ public class EmployeeCreationService {
                         .position(employeeDetailsDTO.getPosition())
                         .salary(employeeDetailsDTO.getSalary())
                         .createdOn(DatetimeUtility.convertToUTC(requestGenerationTime,sourceTimezone))
+                        .updatedOn(DatetimeUtility.convertToUTC(requestGenerationTime,sourceTimezone))
                         .build()
         );
     }

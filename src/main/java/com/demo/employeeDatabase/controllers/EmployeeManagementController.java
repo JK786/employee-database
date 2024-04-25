@@ -11,9 +11,10 @@ import com.demo.employeeDatabase.validators.EmployeeCreationInputValidator;
 import com.demo.employeeDatabase.validators.EmployeeUpdationInputValidator;
 import jakarta.websocket.server.PathParam;
 import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;
 
-
+@Log4j2
 @AllArgsConstructor
 @RestController
 public class EmployeeManagementController {
@@ -34,7 +35,7 @@ public class EmployeeManagementController {
 
             this.creationInputValidator.validate(addEmployeeRequestDTO);
 
-            this.employeeCreationService.createEmployee(addEmployeeRequestDTO.getEmployeeDetailsInputDTO(),addEmployeeRequestDTO.getRequestGenerationTime(), addEmployeeRequestDTO.getSourceTimezone());
+            this.employeeCreationService.createEmployee(addEmployeeRequestDTO.getEmployeeDetails(),addEmployeeRequestDTO.getRequestGenerationTime(), addEmployeeRequestDTO.getSourceTimezone());
         }
 
     /**
@@ -46,11 +47,11 @@ public class EmployeeManagementController {
      * @param updateEmployeeRequestDTO
      */
     @PutMapping("/employee/{id}")
-        public void updateEmployee(@PathVariable("id") final String id,final UpdateEmployeeRequestDTO updateEmployeeRequestDTO) {
+        public void updateEmployee(@PathVariable("id") final String id,@RequestBody final UpdateEmployeeRequestDTO updateEmployeeRequestDTO) {
 
             this.employeeUpdationInputValidator.validate(id,updateEmployeeRequestDTO);
 
-            this.employeeUpdationService.updateEmployee(id,updateEmployeeRequestDTO.getRequestGenerationTime(),updateEmployeeRequestDTO.getSourceTimezone(), updateEmployeeRequestDTO.getEmployeeDetailsInputDTO());
+            this.employeeUpdationService.updateEmployee(id,updateEmployeeRequestDTO.getRequestGenerationTime(),updateEmployeeRequestDTO.getSourceTimezone(), updateEmployeeRequestDTO.getEmployeeDetails());
         }
 
     /**
@@ -60,7 +61,7 @@ public class EmployeeManagementController {
      * @return
      */
     @GetMapping("/employee/{id}")
-        public EmployeeDetailsDTO getEmployee(@PathParam("id") final String id, @PathVariable("sourceTimezone") final String sourceTimezone) {
+        public EmployeeDetailsDTO getEmployee(@PathVariable("id") final String id, @RequestParam("sourceTimezone") final String sourceTimezone) {
 
             if(id == null || id.isEmpty())
                 throw new IllegalArgumentException("Employee id cannot be null or empty");
@@ -72,7 +73,7 @@ public class EmployeeManagementController {
         }
 
         @GetMapping("/employees")
-        public EmployeeDetailsResponseDTO getAllEmployees(@PathVariable("sourceTimezone") final String sourceTimezone) {
+        public EmployeeDetailsResponseDTO getAllEmployees(@RequestParam("sourceTimezone") final String sourceTimezone) {
 
             if(sourceTimezone == null || sourceTimezone.isEmpty())
                 throw new IllegalArgumentException("Source timezone cannot be null or empty");
