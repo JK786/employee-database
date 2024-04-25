@@ -1,4 +1,4 @@
-package com.commons;
+package com.demo.commons;
 
 import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
@@ -12,7 +12,7 @@ import java.time.Instant;
 
 @Getter
 @SuperBuilder(toBuilder = true)
-@NoArgsConstructor  //TODO: Why needed
+@NoArgsConstructor
 @AllArgsConstructor
 public abstract class BaseModel {
 

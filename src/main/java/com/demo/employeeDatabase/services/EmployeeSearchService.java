@@ -1,6 +1,6 @@
 package com.demo.employeeDatabase.services;
 
-import com.commons.DatetimeUtility;
+import com.demo.commons.DatetimeUtility;
 import com.demo.employeeDatabase.dal.EmployeeDAO;
 import com.demo.employeeDatabase.dal.EmployeeRepository;
 import com.demo.employeeDatabase.response.EmployeeDetailsDTO;
@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @AllArgsConstructor
