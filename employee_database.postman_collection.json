@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "fb6c0e73-0c4b-4707-a4e0-c77d4d7ff504",
+		"name": "employee_database",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sourceTimezone\" : \"Asia/Kolkata\",\n  \"requestGenerationTime\" : \"2024-01-01 00:00:00\",\n  \"employeeDetails\" : {\n        \"name\" : \"a\",\n        \"position\" : \"b\",\n        \"email\" : \"c\",\n        \"salary\" : 200\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sourceTimezone\" : \"Asia/Kolkata\",\n  \"requestGenerationTime\" : \"2024-01-01 00:00:00\",\n  \"employeeDetails\" : {\n        \"name\" : \"a\",\n        \"position\" : \"b\",\n        \"email\" : \"c\",\n        \"salary\" : 200\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sourceTimezone\" : \"Asia/Kolkata\",\n  \"requestGenerationTime\" : \"2024-01-01 00:00:00\",\n  \"employeeDetails\" : {\n        \"name\" : \"a\",\n        \"position\" : \"b\",\n        \"email\" : \"c\",\n        \"salary\" : 200\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get employees",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"sourceTimezone\" : \"Asia/Kolkata\",\n  \"requestGenerationTime\" : \"2024-01-01 00:00:00\",\n  \"employeeDetails\" : {\n        \"name\" : \"a\",\n        \"position\" : \"b\",\n        \"email\" : \"c\",\n        \"salary\" : 200\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employee"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
