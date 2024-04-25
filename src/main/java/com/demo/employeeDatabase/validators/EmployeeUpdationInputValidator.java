@@ -35,7 +35,7 @@ public class EmployeeUpdationInputValidator {
             throw new IllegalArgumentException("Email cannot be empty");
         } else {
 
-            if(EmailUtility.isValidEmail(updateEmployeeRequestDTO.getEmployeeDetails().getEmail())) {
+            if(!EmailUtility.isValidEmail(updateEmployeeRequestDTO.getEmployeeDetails().getEmail())) {
                 throw new EmailFormatException("Email is not valid");
             }
         }

@@ -2,7 +2,7 @@ DROP table employee IF EXISTS;
 
 
 CREATE TABLE IF NOT EXISTS employee(
-    id text primary key,
+    id varchar(256) primary key,
     name text,
     position text,
     email text,
